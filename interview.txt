@@ -1,0 +1,79 @@
+Here are some common AWS interview questions categorized by topic:
+
+Role: AWS devops/Cloud engineer 
+Exp: 3-5 years
+
+General Cloud Computing Concepts
+What is cloud computing?
+Explain the different types of cloud computing services.
+IaaS (Infrastructure as a Service)
+PaaS (Platform as a Service)
+SaaS (Software as a Service)
+What are the advantages of cloud computing?
+
+AWS Basics
+What is AWS?
+Explain the difference between AWS regions and availability zones.
+What are some of the most commonly used AWS services?
+How do you manage AWS services?
+AWS Management Console
+AWS CLI (Command Line Interface)
+AWS SDKs
+
+Compute Services
+What is Amazon EC2?
+Explain the different types of EC2 instances.
+What is auto-scaling and how does it work?
+What is Elastic Load Balancing (ELB)?
+
+Storage Services
+What is Amazon S3?
+Explain the difference between S3 storage classes.
+What is Amazon EBS (Elastic Block Store)?
+What is Amazon Glacier?
+
+Database Services
+What is Amazon RDS?
+What is DynamoDB?
+What is Amazon Redshift?
+
+Networking
+What is Amazon VPC?
+Explain the purpose of subnets in a VPC.
+What are security groups and network ACLs?
+What is Route 53?
+
+Security
+What is IAM (Identity and Access Management)?
+How do you secure data in transit and at rest in AWS?
+What is AWS KMS (Key Management Service)?
+
+DevOps and Automation
+What is AWS CloudFormation?
+What is AWS Elastic Beanstalk?
+What is AWS CodePipeline?
+Monitoring and Management
+What is Amazon CloudWatch?
+What is AWS CloudTrail?
+How do you use AWS Config?
+
+Cost Management
+How do you estimate costs in AWS?
+What is the AWS Free Tier?
+What are Reserved Instances and how do they differ from On-Demand instances?
+
+Advanced Topics
+Explain the concept of serverless computing and AWS Lambda.
+What is Amazon ECS (Elastic Container Service) and EKS (Elastic Kubernetes Service)?
+What is AWS Fargate?
+
+Practical Questions
+How would you set up a highly available and scalable web application on AWS?
+Describe a scenario where you had to troubleshoot an AWS service issue.
+
+Behavioral Questions
+Describe a challenging AWS project you worked on.
+How do you keep up with the latest AWS updates and features?
+How do you handle failure in a cloud environment?
+
+These questions cover a range of topics and difficulty levels, so it's a good idea to review and understand each area thoroughly before your interview.

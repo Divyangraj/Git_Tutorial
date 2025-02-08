@@ -1,0 +1,233 @@
+1. What is Amazon S3?
+
+	Simple Storage Service is a scalable and secure cloud storage service provided by Amazon Web Services (AWS). 
+	It allows you to store and retrieve any amount of data from anywhere on the web.
+
+2. What are S3 buckets?
+
+	S3 buckets are containers for storing objects (files) in Amazon S3. Each bucket has a unique name globally across all of AWS.
+
+3. Why use S3 buckets?
+
+	S3 buckets provide a reliable and highly scalable storage solution for various use cases. They are commonly used for backup and restore,
+	data archiving, content storage for websites, and as a data source for big data analytics.
+
+ 
+4. Key benefits of S3 buckets
+
+	S3 buckets offer several advantages, including:
+
+	Durability and availability: S3 provides high durability and availability for your data.
+	
+	Scalability: You can store and retrieve any amount of data without worrying about capacity constraints.
+	
+	Security: S3 offers multiple security features such as encryption, access control, and audit logging.
+	
+	Performance: S3 is designed to deliver high performance for data retrieval and storage operations.
+	
+	Cost-effective: S3 offers cost-effective storage options and pricing models based on your usage patterns.
+
+
+5. Creating an S3 bucket
+
+	To create an S3 bucket, you can use the AWS Management Console, AWS CLI (Command Line Interface), or AWS SDKs (Software Development Kits). 
+	You need to specify a globally unique bucket name and select the region where you want to create the bucket.
+
+6. Choosing a bucket name and region
+
+	The bucket name must be unique across all existing bucket names in Amazon S3. It should follow DNS naming conventions, 
+	be 3-63 characters long, and contain only lowercase letters, numbers, periods, and hyphens. 
+	The region selection affects data latency and compliance with specific regulations.
+
+
+7. Versioning: 
+	Versioning allows you to keep multiple versions of an object in the bucket. 
+	It helps protect against accidental deletions or overwrites.
+
+8. Uploading objects to S3 buckets
+
+	You can upload objects to an S3 bucket using various methods, including the AWS Management Console, AWS CLI, SDKs, and direct HTTP uploads. 
+	Each object is assigned a unique key (name) within the bucket to retrieve it later.
+
+9. Object metadata and properties
+
+	Object metadata contains additional information about each object in an S3 bucket. 
+	It includes attributes like content type, cache control, encryption settings, and custom metadata. 	
+	These properties help in managing and organizing objects within the bucket.
+
+10. File formats and object encryption
+
+	S3 supports various file formats, including text files, images, videos, and more. You can encrypt objects stored in S3 using server-side encryption (SSE). 
+	SSE options include SSE-S3 (Amazon-managed keys), SSE-KMS (AWS Key Management Service), and SSE-C (customer-provided keys).
+
+4. What are S3 storage classes? 
+
+     S3 Intelligent-Tiering:
+ 	It is most suitable for data with access needs that are either changing or unknown. S3 
+	Intelligent-Tiering has four different access tiers: Frequent Access, Infrequent Access 
+	(IA), Archive and Deep Archive. Data is automatically moved to the most inexpensive 
+	storage tier according to customer access patterns. 
+
+     S3 Standard:
+ 	It is suitable for frequently accessed data that needs to be delivered with low latency 
+	and high throughput. S3 Standard targets applications, dynamic websites, content 
+	distribution and big data workloads. 
+
+     S3 Standard-IA:
+ 	It offers a lower storage price for data that is needed less often but that must be quickly 
+	accessible. This tier can be used for backups and long-term data storage. 
+
+     S3 Glacier Instant Retrieval:
+ 	Amazon S3 Glacier Instant Retrieval is an archive storage class that delivers the lowest- 
+	cost storage for long-lived data that is rarely accessed and requires retrieval in 
+	milliseconds. With S3 Glacier Instant Retrieval, you can save up to 68% on storage 
+	costs compared to using the S3 Standard-Infrequent Access (S3 Standard-IA) storage 
+	class, when your data is accessed once per quarter. 
+
+     S3 Glacier Flexible Retrieval:
+ 	S3 Glacier Flexible Retrieval delivers low-cost storage, up to 10% lower cost (than S3 
+	Glacier Instant Retrieval), for archive data that is accessed 1—2 times per year and is 
+	retrieved asynchronously. 
+	S3 Glacier Flexible Retrieval delivers the most flexible retrieval options that balance 
+	cost with access times ranging from minutes to hours and with free bulk retrievals. 
+
+     S3 Glacier Deep Archive:
+ 	S3 Glacier Deep Archive is Amazon S3’s lowest-cost storage class and supports long- 
+	term retention and digital preservation for data that may be accessed once or twice in a 
+	year. It is designed for customers—particularly those in highly-regulated industries, 
+	such as financial services, healthcare, and public sectors—that retain data sets for 7— 
+	10 years or longer to meet regulatory compliance requirements 
+
+     S3 One Zone-IA:
+ 	S3 One Zone-IA is for data that is accessed less frequently, but requires rapid access 
+	when needed. Unlike other S3 Storage Classes which store data in a minimum of three 
+	Availability Zones (AZs), S3 One Zone-IA stores data in a single AZ and costs 20% 
+	less than S3 Standard-IA. 
+	Use of S3 One Zone-IA is indicated for infrequently accessed data without high 
+	resilience or availability needs, data that is able to be recreated and backing up on- 
+	premises data. 
+
+     S3 Outposts:
+ 	It adds S3 object storage features and APIs to an on-premises AWS Outposts 
+	environment. S3 Outposts is best used when performance needs call for data to be stored 
+	near on-premises applications or to satisfy specific data residency requirements
+
+
+11. Lifecycle management
+
+	Lifecycle management allows you to define rules for transitioning objects between different 
+	storage classes or deleting them automatically based on predefined criteria. 
+	
+	For example, you can move infrequently accessed data to a lower-cost storage class after a specified time 
+	 or delete objects after a certain retention period.
+
+12. Multipart uploads
+
+	Multipart uploads provide a mechanism for uploading large objects in parts, which improves performance and resiliency. 
+	You can upload each part in parallel and then combine them to create the complete object. 
+	Multipart uploads also enable resumable uploads in case of failures.
+
+13. Managing large datasets with S3 Batch Operations
+
+	S3 Batch Operations is a feature that allows you to perform bulk operations on large numbers of objects in an S3 bucket. 
+	It provides an efficient way to automate tasks such as copying objects, tagging, and restoring archived data.
+
+
+
+14. Is there a way to upload a file that is greater than 100 MB in Amazon S3?
+ 
+ 	Yes, it is possible by using multipart upload utility from AWS. With multipart
+ 	upload utility, larger files can be uploaded in multiple parts that are uploaded
+ 	independently. You can also decrease upload time by uploading these parts in
+ 	parallel. After the upload is done, the parts will be merged into a single object
+ 	or file to create the original file from which the parts were created.
+
+15. What is the difference between S3 and S3 Glacier?
+	 S3 is used for general, high-speed storage accessible at any time, suitable for a wide
+	 range of applications including websites, mobile apps, and backups. 
+
+	 S3 Glacier is a lower-cost storage service optimized for data archiving and long-term backup, where
+	 retrieval times of several minutes to hours are acceptable.
+
+16. Explain the S3 Lifecycle Policies.
+ 	Lifecycle policies in S3 are used to manage your objects automatically as they transition
+ 	to different stages of their lifecycle. Policies can be used to transition objects to less
+ 	expensive storage classes or schedule objects for automatic deletion after certain
+ 	periods, helping reduce costs by managing data according to its lifecycle.
+
+ 17. HowdoesS3Encryption work?
+
+ 	S3 provides two means of encryption:
+	
+	-> Server-Side Encryption (SSE): 
+		Where Amazon handles the encryption process, the decryption, and key management. 
+			You can choose among three keys management options: 
+			
+			(1) SSE-S3 (uses keys managed by S3), 
+			(2) SSE-KMS (uses AWS Key Management Service), 
+			(3) SSE-C (where you manage the encryption keys).
+
+	-> Client-Side Encryption: Your data is encrypted on the client side before uploading it to S3.
+
+18. What is the minimum and maximum size of individual objects that you can store in S3?
+ 
+	The minimum size of individual objects that you can store in S3 is 0 bytes and the maximum 
+	bytes that you can store for individual objects is 5TB.  
+
+19. What is the default storage class in S3?  
+	Answer: The default storage class in S3 in Standard frequently accessed. 
+
+20. What is glacier?  
+	Answer: Glacier is the backup or archival tool that you use to back up your data in S3.
+
+21. How can you secure the access to your S3 bucket?  
+	Answer: There are two ways that you can control the access to your S3 buckets,  
+	• ACL – Access Control List  
+	• Bucket polices 
+
+22. How can you encrypt data in S3?  
+	Answer: You can encrypt the data by using the below methods,  
+	• Server Side Encryption – S3 (AES 256 encryption)  
+	• Server Side Encryption – KMS (Key management Service) 
+	• Server Side Encryption – C (Client Side)
+
+23. What are the parameters for S3 pricing?  
+	Answer: The pricing model for S3 is as below,  
+	• Storage used  
+	• Number of requests you make  
+	• Storage management  
+	• Data transfer  
+	• Transfer acceleration  
+
+24. What is the pre-requisite to work with Cross region replication in S3?  
+	Answer: You need to enable versioning on both source bucket and destination to work with cross 
+	region replication. Also both the source and destination bucket should be in different region. 
+
+25. What is the maximum individual archive that you can store in glacier?  
+	Answer: You can store a maximum individual archive of upto 40 TB.
+
+26. One of my s3 is bucket is deleted but i need to restore is there any possible way?  
+	Answer: If versioning is enabled we can easily restore them  
+
+27. what are the things we need to remember while creating s3 bucket?  
+	Answer:  
+	• Amazon S3 and Bucket names are  
+	• This means bucket names must be unique across all AWS  
+	• Bucket names can contain upto 63 lowercase letters, numbers, hyphens and  
+	• You can create and use multiple buckets  
+	• You can have upto 10,000 per account by 
+
+28. Explain Amazon s3 lifecycle rules?  
+	Answer: Amazon S3 lifecycle configuration rules, you can significantly reduce your storage costs by 
+	automatically transitioning data from one storage class to another or even automatically delete data 
+	after  a period of time.  
+	• Store backup data initially in Amazon S3 Standard  
+	• After 30 days, transition to Amazon Standard IA  
+	• After 90 days, transition to Amazon Glacier  
+	• After 3 years, delete 
+
+29. What is the maximum file length in S3?  
+	Answer: utf-8 1024 bytes 
+
+30. Can objects in Amazon s3 be delivered through amazon cloud front?  
+	Answer:Yes 
